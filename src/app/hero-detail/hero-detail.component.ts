@@ -30,7 +30,19 @@ export class HeroDetailComponent implements OnInit {
     )
   }
 
+  save() {
+    this.heroService.update_hero(this.hero).subscribe(
+      () => this.location.back()
+    );
+  }
+
   goBack(): void {
     this.location.back();
+  }
+
+  delete(): void {
+    this.heroService.delete_hero(this.hero).subscribe(
+      () => this.location.back()
+    )
   }
 }

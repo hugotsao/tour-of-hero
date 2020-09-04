@@ -1,0 +1,11 @@
+<p>search-hero works!</p>
+<label>
+    Search for Hero:
+<input #term id="term" (input)="search(term.value)"/>
+
+<ul>
+    <li *ngFor="let hero of heros$ | async">
+        {{ hero.name }}
+    </li>
+</ul>
+</label>
